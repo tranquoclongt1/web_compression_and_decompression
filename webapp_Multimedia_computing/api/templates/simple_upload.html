@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section id="first" class="main">
+			<header>
+				<div class="container">
+					<h2><b>PROJECT MULTIMEDIA COMPUTING</b></h2>
+					<h3>Implementation of Compression and Decompression</h3>
+					<h4><b>Members:</b><br/>
+						Tran Quoc Long - 14520490<br />
+						Hoang Ngoc Thach - <br />
+						Le Thi Ngoc Thuy - <br />
+					</h4>
+					<p>This project includes: Huffman, Shanon-Fano, LZW </p>
+				</div>
+			</header>
+			<!-- Main processing -->
+			<div class="content dark style1 featured">
+						<div class="container">
+							<h1><b>Compress and decompress</b></h1>
+						</div>
+					
+				
+					<form method="post" enctype="multipart/form-data">
+						{% csrf_token %}
+						<input type="file" name="myfile">
+						<button type="submit">Upload</button>
+						<!-- <a type="submit" class="button scrolly">Upload</a> -->
+					</form>
+
+					{% if uploaded_file_url %}
+						<p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+					{% endif %}
+					{% if path %}
+						<p>{{path}}</p>
+					{% endif %}
+				
+			</div>
+
+			<div class="content dark style1 featured">
+				<div class="container">
+					<div class="row">
+						<div class="4u 12u(narrow)">
+							<section>
+								<span class="feature-icon"><span class="icon fa-clock-o"></span></span>
+								<header>
+									<h3>Huffman</h3>
+								</header>
+								<p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales.
+								Diam tempor dui lacinia accumsan vivamus. Gravida dis placerat lectus
+								ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
+								accumsan vivamus.</p>
+							</section>
+						</div>
+						<div class="4u 12u(narrow)">
+							<section>
+								<span class="feature-icon"><span class="icon fa-bolt"></span></span>
+								<header>
+									<h3>Shanon-Fano</h3>
+								</header>
+								<p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales.
+								Diam tempor dui lacinia accumsan vivamus. Gravida dis placerat lectus
+								ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
+								accumsan vivamus.</p>
+							</section>
+						</div>
+						<div class="4u 12u(narrow)">
+							<section>
+								<span class="feature-icon"><span class="icon fa-cloud"></span></span>
+								<header>
+									<h3>LZW</h3>
+								</header>
+								<p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales.
+								Diam tempor dui lacinia accumsan vivamus. Gravida dis placerat lectus
+								ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
+								accumsan vivamus.</p>
+							</section>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="12u">
+							<footer>
+								<a href="#second" class="button scrolly">Gravida tempor lacinia</a>
+							</footer>
+						</div>
+					</div>
+				</div>
+			</div>
+
+					
+		</section>
+
+{% endblock %}
