@@ -25,7 +25,7 @@ SECRET_KEY = '-g!^b(73c6d8+v71_757im#g%4#p%m(80c%!b^ik&vo$wddo0u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [u'tranquoclongt1.pythonanywhere.com']
 
 
 # Application definition
@@ -132,7 +132,7 @@ STATICFILES_DIRS = [
     '/var/www/static/',
 ]
 
-RUN_LOCAL = False
+RUN_LOCAL = True
 if RUN_LOCAL:
     SECURE_SSL_REDIRECT = False
     ALLOWED_HOSTS = []
