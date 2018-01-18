@@ -77,9 +77,13 @@ WSGI_APPLICATION = 'webapp_Multimedia_computing.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dengroupitc$DEN_Server',
+        'USER':'dengroupitc',
+        'PASSWORD': 'den.group.E11',
+        'HOST':'dengroupitc.mysql.pythonanywhere-services.com',
     }
+
 }
 
 
@@ -127,3 +131,15 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     '/var/www/static/',
 ]
+
+RUN_LOCAL = False
+if RUN_LOCAL:
+    SECURE_SSL_REDIRECT = False
+    ALLOWED_HOSTS = []
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
