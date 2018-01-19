@@ -1,22 +1,74 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <ul>
-    <li>
-      <a href="{% url 'simple_upload' %}">Simple Upload</a>
-    </li>
-    <li>
-      <a href="{% url 'model_form_upload' %}">Model Form Upload</a>
-    </li>
-  </ul>
 
-  <p>Uploaded files:</p>
-  <ul>
-    {% for obj in documents %}
-      <li>
-        <a href="{{ obj.document.url }}">{{ obj.document.name }}</a>
-        <small>(Uploaded at: {{ obj.uploaded_at }})</small>
-      </li>
-    {% endfor %}
-  </ul>
+<section id="first" class="main">
+      <header>
+        <div class="container">
+          <h2><b>PROJECT MULTIMEDIA COMPUTING</b></h2>
+          <h3>Implementation of Compression and Decompression</h3>
+
+          <h4><b>Members:</b><br/>
+            Tran Quoc Long - 14520490<br />
+            Hoang Ngoc Thach - <br />
+            Le Thi Ngoc Thuy - <br />
+          </h4>
+          <p>This project includes: Huffman, Shanon-Fano, LZW </p>
+        </div>
+      </header>
+        <div class="content dark style3 featured">
+
+        <div><p><font size="15"><h1>Selections<br><br></h1></font></p></div>
+        <div class="row">
+          <div class="12u">
+            <footer>
+              <a href="{% url 'compression' %}" class="button">Compression</a>
+              <a href="{% url 'decompression' %}" class="button">Decompression</a>
+            </footer>
+          </div>
+        </div>
+        </div>
+        <div class="content dark style1 featured">
+        
+
+          <div><p><font size="15"><h1>Some informations<br><br></h1></font></p></div>
+
+        <div class="container">
+          <div class="row">
+            <div class="4u 12u(narrow)">
+              <section>
+                <span class="feature-icon"><span class="icon fa-clock-o"></span></span>
+                <header>
+                  <h3>Huffman</h3>
+                </header>
+                <p>In computer science and information theory, a <b>Huffman</b> code is a particular type of optimal <i>prefix</i> code that is commonly used for lossless data compression. The process of finding and/or using such a code proceeds by means of Huffman coding, an algorithm developed by David A. Huffman while he was a Sc.D. student at MIT, and published in the 1952 paper "A Method for the Construction of Minimum-Redundancy Codes". <br />
+
+                The output from Huffman's algorithm can be viewed as a variable-length code table for encoding a source symbol (such as a character in a file). The algorithm derives this table from the estimated probability or frequency of occurrence (weight) for each possible value of the source symbol. As in other entropy encoding methods, more common symbols are generally represented using fewer bits than less common symbols. Huffman's method can be efficiently implemented, finding a code in time linear to the number of input weights if these weights are sorted.[2] However, although optimal among methods encoding symbols separately, Huffman coding is not always optimal among all compression methods.</p>
+              </section>
+            </div>
+            <div class="4u 12u(narrow)">
+              <section>
+                <span class="feature-icon"><span class="icon fa-bolt"></span></span>
+                <header>
+                  <h3>Shanon-Fano</h3>
+                </header>
+                <p> the field of data compression, <b>Shannon–Fano coding</b>, named after Claude Shannon and Robert Fano, is a technique for constructing a prefix code based on a set of symbols and their probabilities (estimated or measured). It is suboptimal in the sense that it does not achieve the lowest possible expected code word length like Huffman coding; however it still guarantees that all code word lengths are within one bit of their theoretical ideal <i>-log(P(x))</i><br>
+
+                The technique was proposed in Shannon's "A Mathematical Theory of Communication", his 1948 article introducing the field of information theory. The method was attributed to Fano, who later published it as a technical report.[1] Shannon–Fano coding should not be confused with Shannon coding, the coding method used to prove Shannon's noiseless coding theorem, or with Shannon–Fano–Elias coding (also known as Elias coding), the precursor to arithmetic coding.</p>
+              </section>
+            </div>
+            <div class="4u 12u(narrow)">
+              <section>
+                <span class="feature-icon"><span class="icon fa-cloud"></span></span>
+                <header>
+                  <h3>LZW</h3>
+                </header>
+                <p><b>Lempel–Ziv–Welch (LZW)</b> is a universal lossless data compression algorithm created by Abraham Lempel, Jacob Ziv, and Terry Welch. It was published by Welch in 1984 as <i>an improved implementation of the LZ78 algorithm</i> published by Lempel and Ziv in 1978.<br> - The algorithm is simple to implement and has the potential for very high throughput in hardware implementations.[1] It is the algorithm of the widely used Unix file compression utility compress and is used in the GIF image format.</p>
+              </section>
+            </div>
+          </div>
+
+        </div>
+      </div>
+</section>
 {% endblock %}

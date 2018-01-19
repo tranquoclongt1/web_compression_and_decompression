@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section id="first" class="main">
+			<header>
+				<div class="container">
+					<h2><b>PROJECT MULTIMEDIA COMPUTING</b></h2>
+					<h3>Implementation of Compression and Decompression</h3>
+					<h4><b>Members:</b><br/>
+						Tran Quoc Long - 14520490<br />
+						Hoang Ngoc Thach - <br />
+						Le Thi Ngoc Thuy - <br />
+					</h4>
+					<p>This project includes: Huffman, Shanon-Fano, LZW </p>
+					<a href="{% url 'home' %}" class="button">HOME</a>
+				</div>
+			</header>
+			<!-- Main processing -->
+			<div class="content dark style3 featured">
+						<div class="container">
+							<font size="20"><h1><b>COMPRESSION</b></h1></font>
+						</div>
+					
+				
+					<form method="post" enctype="multipart/form-data">
+						{% csrf_token %}
+						<input type="file" name="myfile">
+						<button type="submit">Compress</button>
+						<!-- <a type="submit" class="button scrolly">Upload</a> -->
+					</form>
+
+					{% if uploaded_file_url %}
+						<p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+					{% endif %}
+					{% if download_path %}
+						<p>Finished!</p>
+						<p><b>Download: </b><a href="{{ download_path}}" download>{{download_path}}</p>
+					{% endif %}
+				
+			</div>
+
+			
+
+			
+			<div class="row">
+				<div class="12u">
+					<footer>
+						<a href="#second" class="button scrolly">Gravida tempor lacinia</a>
+					</footer>
+				</div>
+			</div>
+
+
+					
+		</section>
+
+{% endblock %}

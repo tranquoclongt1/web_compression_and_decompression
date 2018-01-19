@@ -123,17 +123,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_URL = '/api/static/'
+MEDIA_URL = '/api/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'api/media')
 
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, "static"),
 #     '/var/www/static/',
 # ]
 
-RUN_LOCAL = False
+RUN_LOCAL = True
 if RUN_LOCAL:
     SECURE_SSL_REDIRECT = False
     ALLOWED_HOSTS = []

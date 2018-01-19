@@ -1,18 +1,18 @@
 import sys
-import HuffmanCore
-import CanoncialHuffmanCode
-import IOStreamSolution
+import api.Huffman.HuffmanCore as HuffmanCore
+import api.Huffman.CanoncialHuffmanCode as CanoncialHuffmanCode
+import api.Huffman.IOStreamSolution as IOStreamSolution
 
 python3 = sys.version_info.major >= 3
 
 
 # Command line main application function.
-def main(args):
+def huffman_decompress_main_process(_input_file_path, _output_file_path):
     # Handle command line arguments
-    if len(args) != 2:
-        sys.exit("Usage: python HuffmanDecompress.py InputFilePath OutputFilePath")
-    inputfile = args[0]
-    outputfile = args[1]
+    # if len(args) != 2:
+    #     sys.exit("Usage: python HuffmanDecompress.py InputFilePath OutputFilePath")
+    inputfile = _input_file_path
+    outputfile = _output_file_path
 
     # Perform file decompression
     bitin = IOStreamSolution.BitInputStream(open(inputfile, "rb"))
