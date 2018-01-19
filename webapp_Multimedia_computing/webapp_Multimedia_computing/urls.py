@@ -20,6 +20,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # url(r'^api/', include('api.urls', namespace='api')),
     url(r'^$', views.home, name='home'),
-    url(r'^uploads/simple/$', views.simple_upload, name='simple_upload'),
-    url(r'^uploads/form/$', views.model_form_upload, name='model_form_upload'),
+    url(r'^uploads/compress/$', views.compression, name='compression'),
+    url(r'^uploads/decompress/$', views.decompression, name='decompression'),
 ]
