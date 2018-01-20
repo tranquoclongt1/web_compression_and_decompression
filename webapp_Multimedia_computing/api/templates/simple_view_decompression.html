@@ -15,6 +15,11 @@
 
 					<form method="post" enctype="multipart/form-data">
 						{% csrf_token %}
+						<select name="algorithm">
+						  <option value="LZW">LZW</option>
+						  <option value="Huffman">Huffman</option>
+						  <option value="Arithmetic">Arithmetic</option>
+						</select>
 						<input type="file" name="myfile">
 						<button type="submit">Decompress</button>
 						<!-- <a type="submit" class="button scrolly">Upload</a> -->

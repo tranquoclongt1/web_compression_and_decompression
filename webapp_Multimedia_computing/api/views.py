@@ -7,6 +7,8 @@ from api.models import Document
 from .Huffman.HuffmanCompress import huffman_compress_main_process
 from .Huffman.HuffmanDecompress import huffman_decompress_main_process
 from .forms import DocumentForm
+from .LZW.lzw_compression import LZW
+from .Arithmetic.arithmetic import *
 
 
 def index(request):
@@ -29,22 +31,39 @@ def compression(request):
         module_dir = os.path.dirname(__file__)
         module_dir = os.path.join(module_dir, 'media')
         filepath_parts =  uploaded_file_url.split('/')
-        saving_path = '/' + filepath_parts[1] + '/' +filepath_parts[2] + '/compress_' + filepath_parts[3] + '.ahihi'
+        saving_path = '/' + filepath_parts[1] + '/' +filepath_parts[2]
+        saving_path = '/' + filepath_parts[1] + '/' +filepath_parts[2] + '/compress_' + request.POST['algorithm'] + '_' + filepath_parts[3][:-4]  + '.ahihi'
 
         # Paths
         origin_file_path = os.path.join(module_dir, filepath_parts[3])
 
-        compressed_file_path = os.path.join(module_dir,'compress_'+ filepath_parts[3]) + '.ahihi'
-        #
-        # huffman_compress_main_process(uploaded_file_url, saving_path)
-        try:
-            huffman_compress_main_process(origin_file_path, compressed_file_path)
-        except:
-            return render(request, 'exceptions.html', {})
+        compressed_file_path = os.path.join(module_dir,'compress_'+ request.POST['algorithm'] + '_' + filepath_parts[3][:-4]) + '.ahihi'
+
+
+        # Paths
+        origin_file_path = os.path.join(module_dir, filepath_parts[3])
+
+        # select algorithm
+        if request.POST['algorithm'] == 'Huffman':
+            #
+            # huffman_compress_main_process(uploaded_file_url, saving_path)
+            #
+            # generate file name
+            compression_ratio = huffman_compress_main_process(origin_file_path, compressed_file_path)
+        elif request.POST['algorithm'] == 'LZW':
+            # generate file name
+
+            # run LZW on origin file and save to compressed file path
+            lzw_compress = LZW()
+            compression_ratio = lzw_compress.lzw_compression(origin_file_path, compressed_file_path)
+        elif request.POST['algorithm'] == 'Arithmetic':
+            compression_ratio = arithmetic_compression(origin_file_path, compressed_file_path)
+
         # module_dir = os.path.dirname(__file__)
         return render(request, 'simple_view_compression.html', {
             'uploaded_file_url': uploaded_file_url,
-            'download_path': saving_path
+            'download_path': saving_path,
+            'compression_ratio': compression_ratio
         })
     return render(request, 'simple_view_compression.html')
 
@@ -65,13 +84,26 @@ def decompression(request):
         # Paths
         origin_file_path = os.path.join(module_dir, filepath_parts[3])
         compressed_file_path = os.path.join(module_dir,'decompress_'+ filepath_parts[3]) + '.txt'
-        #
-        # huffman_compress_main_process(uploaded_file_url, saving_path)
-        try:
-            huffman_decompress_main_process(origin_file_path, compressed_file_path)
 
+        try:
+            # select algorithm
+            if request.POST['algorithm'] == 'Huffman':
+                #
+                # huffman_compress_main_process(uploaded_file_url, saving_path)
+                #
+                # generate file name
+                huffman_decompress_main_process(origin_file_path, compressed_file_path)
+            elif request.POST['algorithm'] == 'LZW':
+                # generate file name
+
+                # run LZW on origin file and save to compressed file path
+                lzw_compress = LZW()
+                lzw_compress.lzw_decompression(origin_file_path, compressed_file_path)
+            elif request.POST['algorithm'] == 'Arithmetic':
+                arithmetic_decompression(origin_file_path, compressed_file_path)
         except:
             return render(request, 'exceptions.html', {})
+
         # module_dir = os.path.dirname(__file__)
         return render(request, 'simple_view_decompression.html', {
             'uploaded_file_url': uploaded_file_url,
