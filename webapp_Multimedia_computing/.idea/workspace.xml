@@ -26,7 +26,7 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapp_Multimedia_computing/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
+            <state relative-caret-position="2814">
               <caret line="134" column="16" lean-forward="false" selection-start-line="134" selection-start-column="16" selection-end-line="134" selection-end-column="16" />
               <folding />
             </state>
@@ -36,7 +36,7 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapp_Multimedia_computing/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
+            <state relative-caret-position="441">
               <caret line="23" column="39" lean-forward="false" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
               <folding>
                 <element signature="e#661#702#0" expanded="true" />
@@ -58,8 +58,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="69" column="30" lean-forward="true" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+            <state relative-caret-position="-327">
+              <caret line="103" column="28" lean-forward="false" selection-start-line="103" selection-start-column="28" selection-end-line="103" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -73,12 +73,6 @@
               <folding>
                 <marker date="1516435592110" expanded="true" signature="469:1664" ph="..." />
                 <marker date="1516435592110" expanded="true" signature="2108:2287" ph="..." />
-                <marker date="1516435592110" expanded="true" signature="2108:2304" ph="..." />
-                <marker date="1516435592110" expanded="true" signature="2351:2732" ph="..." />
-                <marker date="1516435592110" expanded="true" signature="2401:2732" ph="..." />
-                <marker date="1516435592110" expanded="true" signature="2767:3089" ph="..." />
-                <marker date="1516435592110" expanded="true" signature="2852:2965" ph="..." />
-                <marker date="1516435592110" expanded="true" signature="2993:3089" ph="..." />
               </folding>
             </state>
           </provider>
@@ -164,7 +158,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -192,6 +185,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -228,7 +222,7 @@
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18635875" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18904404" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -279,6 +273,79 @@
     <entry file="file://$PROJECT_DIR$/api/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
+          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp_Multimedia_computing/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2814">
+          <caret line="134" column="16" lean-forward="false" selection-start-line="134" selection-start-column="16" selection-end-line="134" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp_Multimedia_computing/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="23" column="39" lean-forward="false" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+          <folding>
+            <element signature="e#661#702#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/Huffman/HuffmanCompress.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="8" selection-end-column="55" />
+          <folding>
+            <marker date="1516435592110" expanded="true" signature="469:1664" ph="..." />
+            <marker date="1516435592110" expanded="true" signature="2108:2287" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/Huffman/HuffmanDecompress.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1239">
+          <caret line="69" column="30" lean-forward="true" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
           <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
@@ -319,12 +386,6 @@
           <folding>
             <marker date="1516435592110" expanded="true" signature="469:1664" ph="..." />
             <marker date="1516435592110" expanded="true" signature="2108:2287" ph="..." />
-            <marker date="1516435592110" expanded="true" signature="2108:2304" ph="..." />
-            <marker date="1516435592110" expanded="true" signature="2351:2732" ph="..." />
-            <marker date="1516435592110" expanded="true" signature="2401:2732" ph="..." />
-            <marker date="1516435592110" expanded="true" signature="2767:3089" ph="..." />
-            <marker date="1516435592110" expanded="true" signature="2852:2965" ph="..." />
-            <marker date="1516435592110" expanded="true" signature="2993:3089" ph="..." />
           </folding>
         </state>
       </provider>
@@ -390,12 +451,6 @@
           <folding>
             <marker date="1516435592110" expanded="true" signature="469:1664" ph="..." />
             <marker date="1516435592110" expanded="true" signature="2108:2287" ph="..." />
-            <marker date="1516435592110" expanded="true" signature="2108:2304" ph="..." />
-            <marker date="1516435592110" expanded="true" signature="2351:2732" ph="..." />
-            <marker date="1516435592110" expanded="true" signature="2401:2732" ph="..." />
-            <marker date="1516435592110" expanded="true" signature="2767:3089" ph="..." />
-            <marker date="1516435592110" expanded="true" signature="2852:2965" ph="..." />
-            <marker date="1516435592110" expanded="true" signature="2993:3089" ph="..." />
           </folding>
         </state>
       </provider>
@@ -525,12 +580,6 @@
           <folding>
             <marker date="1516435592110" expanded="true" signature="469:1664" ph="..." />
             <marker date="1516435592110" expanded="true" signature="2108:2287" ph="..." />
-            <marker date="1516435592110" expanded="true" signature="2108:2304" ph="..." />
-            <marker date="1516435592110" expanded="true" signature="2351:2732" ph="..." />
-            <marker date="1516435592110" expanded="true" signature="2401:2732" ph="..." />
-            <marker date="1516435592110" expanded="true" signature="2767:3089" ph="..." />
-            <marker date="1516435592110" expanded="true" signature="2852:2965" ph="..." />
-            <marker date="1516435592110" expanded="true" signature="2993:3089" ph="..." />
           </folding>
         </state>
       </provider>
@@ -553,7 +602,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp_Multimedia_computing/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
+        <state relative-caret-position="441">
           <caret line="23" column="39" lean-forward="false" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
           <folding>
             <element signature="e#661#702#0" expanded="true" />
@@ -573,7 +622,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp_Multimedia_computing/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
+        <state relative-caret-position="2814">
           <caret line="134" column="16" lean-forward="false" selection-start-line="134" selection-start-column="16" selection-end-line="134" selection-end-column="16" />
           <folding />
         </state>
@@ -581,8 +630,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="69" column="30" lean-forward="true" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+        <state relative-caret-position="-327">
+          <caret line="103" column="28" lean-forward="false" selection-start-line="103" selection-start-column="28" selection-end-line="103" selection-end-column="28" />
           <folding />
         </state>
       </provider>

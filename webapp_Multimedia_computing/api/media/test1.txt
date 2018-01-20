@@ -1,0 +1,199 @@
+﻿TRƯỜNG ĐẠI HỌC CÔNG NGHỆ THÔNG TIN
+KHOA KHOA HỌC MÁY TÍNH
+
+
+
+MÔN HỌC
+TRUY VẤN THÔNG TIN ĐA PHƯƠNG TIỆN
+
+BÁO CÁO ĐỒ ÁN CUỐI KÌ
+IMAGE RETRIEVAL
+
+
+
+Lớp: KHTN2014
+GLVT: Nguyễn Vinh Tiệp
+GVTH: Đỗ Văn Tiến
+Sinh viên thực hiện: Trần Quốc Long
+MSSV: 14520490
+
+
+
+
+
+
+
+Hồ Chí Minh, ngày 15 tháng 6, năm 2017
+
+MỤC LỤC
+I.	GIỚI THIỆU	3
+1.	Information retrieval là gì?	3
+2.	Image retrieval là gì?	3
+II.	CƠ SỞ LÝ THUYẾT	3
+1.	Bag of visual words model	3
+2.	Feature descriptors	3
+3.	K-means clustering	4
+4.	Xây dựng Vocabulary:	5
+5.	K-D tree	5
+6.	K nearest neighbors:	5
+Khái niệm:	5
+Các bước thực hiện	6
+III.	THUẬT GIẢI CHƯƠNG TRÌNH	6
+IV.	MÔI TRƯỜNG CÀI ĐẶT VÀ CÁC THƯ VIỆN KÈM THEO	7
+1.	Môi trường cài đặt:	7
+2.	Thư viện đính kèm:	7
+3.	Cài đặt Opencv:	7
+V.	GIAO DIỆN VÀ DEMO	7
+1.	Giao diện:	7
+2.	Một số demo	9
+VI.	NHẬN XÉT ĐÁNH GIÁ	10
+1.	Nhận xét:	10
+2.	Đánh giá độ chính xác của hệ thống:	11
+VII.	THAM KHẢO	12
+
+ 
+	GIỚI THIỆU
+	Information retrieval là gì?
+	Information retrieval (truy vấn thông tin) Là hoạt động thu thập các nguồn thông tin liên quan đến một thông tin cần tìm kiếm, có thể dựa trên siêu dữ liệu (metadata) hoặc trên việc đánh chỉ mục toàn văn (hoặc dựa trên nội dung khác). Những hệ thống truy hồi thông tin tự động được sử dụng để giảm thiểu "quá tải thông tin". Nhiều các trường đại học và thư viện công cộng sử dụng hệ thống truy hồi thông tin để cung cấp truy cập đến sách báo và các tài liệu khác. Các máy tìm kiếm trên web được coi là những ứng dụng truy hồi thông tin dễ nhận thấy nhất [1].
+	Image retrieval là gì?
+	Một hệ thống image retrieval là hệ thống dùng để tìm kiếm, truy vấn hình ảnh từ một tập database lớn gồm các ảnh số (digital images).
+	Giải pháp truyền thống và chung nhất của image retrieval là thêm các “captions”, keywords hoặc các descriptions vào bức ảnh để có thể xem xét bức ảnh như văn bản, qua đó hệ thống truy vấn có thể thực hiện thao tác truy vấn trên bộ data đã có [2].
+	CƠ SỞ LÝ THUYẾT
+	Bag of visual words model
+	The BoVW model được sử dụng rộng rãi bằng các biểu diễn bức ảnh dưới dạng collection of local features. 
+	Những local features này được gom nhóm lại của những local descriptors.
+	Tổng số local descriptors được extracted có số lượng rất lớn. Thêm vào đó, việc tìm kiếm những láng giềng gần nhất với mỗi local descriptor trong ảnh query tốn một khối thời gian lớn. Vì vậy, BoVW giải quyết vấn đề này bằng cách định lượng các descriptors thành các “visual word”, qua đó làm giảm tổng số descriptors. Vì vậy, BoVW làm descriptor hiệu quả hơn để thay đổi [3]. 
+	Mô hình này gần giống với với mô hình truyền thống của description of texts in information retrieval, nhưng được xem xét cho việc truy vấn hình ảnh.
+	Feature descriptors
+Scale-invariant feature transform (SIFT) là thuật toán của thị giác máy tính để xác định và mô tả các local features trong bức ảnh [4].
+Cụ thể:
+	Chia cửa sổ 16x16 thành lưới 4x4 (ví dụ bên dưới với trường hợp lưới 2x2).
+	Tính toán một hướng histogram với mỗi cell.
+	16 cells * 8 hướng = descriptor 128 chiều.
+ 
+Hình 1. SIFT
+	K-means clustering
+Phát biểu bài toán:
+	Input
+	Tập các  đối tượng X = {xi| i = 1, 2, …, N},
+	Số cụm: K
+	Output
+	Các cụm Ci ( i = 1 - K) tách rời và hàm tiêu chuẩn Euclidean đạt giá trị tối thiểu. 
+Các bước của thuật toán
+Bước 1. Khởi tạo 
+	Chọn K trọng tâm {ci} (i = 1÷K).
+Bước 2. Tính toán khoảng cách     
+ 
+Bước 3. Cập nhật lại trọng tâm
+ 
+Bước 4. Điều kiện dừng: Lặp lại các bước 2 và 3 cho tới khi không có sự thay đổi 
+trọng tâm của cụm. 
+
+	Xây dựng Vocabulary:
+	Ở phần trước đã đề cập, tổng số feature descriptors rất lớn. Để giải quyết vấn đề này, các features descriptors được cluster bằng các áp dụng thuật toán phân nhóm, như kĩ thuật K-means để tạo ra visual vocabulary.
+	Mỗi cluster được xem như một từ riêng biết trong vocabulary, được biểu diễn đại diện bởi các trung tâm của các clusters.
+	Kích thước của vocabulary được xác định bằng cách sử dụng thuật toán phân nhóm. Thêm vào đó, nó phụ thuộc vào kích thước và kiểu của dataset [3][6].
+	Đầu tiên, BoVW xác định training dataset là S bao gồm các ảnh được biểu diễn S=s1,s2,…,sn, với s là visual feature đã được extract. Sau đó sử dụng thuật toán phân nhóm K-means (dựa trên một số cố định visual words W, được biểu diễn bởi W=w1,w2,..,wv với v là số lượng clusters.
+	Tiếp đến, data đước tổng hợp trong một bảng kích thước VxN của  Nij =n(wi,sj), với n(wi, sj) thể hiện tần suất xuất hiện của word wi trong ảnh sj[5]. 
+	K-D tree
+	k-d tree là cây nhị phân, trong đó, mỗi node là một điểm có k chiều. Với mỗi node không phải node lá có thể được hiểu ngầm là tạm ra siêu phẳng chia không gian thành hai chiều, được gọi là half-spaces [7]. 
+	Những điểm bên trái của siêu phẳng này được biểu thị bới subtree bên trái của node đó, và những điểm bên phải thì ngược lại.
+	(*) OpenCV có hỗ trợ hàm KDTree
+	K nearest neighbors:
+Khái niệm:
+	KNN là một thuật toán của Machine Learning (ML). KNN viết tắt của K-nearest neighbor. Thuật toán này hiểu đơn giản là tìm k phần tử giống phần tử được test nhất, kết quả là class nào xuất hiện nhiều nhất thì đó là kết quả cần tìm.
+ 
+Hình 2. Minh họa KNN
+Các bước thực hiện
+	Chuẩn bị bộ dữ liệu ký tự
+	Train KNN
+	Test (predict) kết quả
+	(*) Opencv có hỗ trợ hàm knn
+
+	THUẬT GIẢI CHƯƠNG TRÌNH
+ 
+Hình 3. Sơ đồ thuật giải [3]
+	MÔI TRƯỜNG CÀI ĐẶT VÀ CÁC THƯ VIỆN KÈM THEO
+	Môi trường cài đặt: 
+	Microsoft Visual Studio 2017.  
+	Thư viện đính kèm: 
+	Opencv:  http://opencv.org/opencv-3-0.html 
+	Opecv_contrib: https://github.com/opencv/opencv_contrib 
+	Cài đặt Opencv: 
+	Qui trình cài đặt Opencv và gán biến môi trường được tiến hành theo hướng dẫn trên link: https://dangkhoasdc.github.io/post/blog/install_opencv_vs/
+	GIAO DIỆN VÀ DEMO
+	Giao diện:
+ 
+Hình 4. Giao diện chính của chương trình.
+Cụ thể:
+	Button “Chọn ảnh query”: chọn ảnh query đầu vào.
+	Button “Tìm kiếm”: tiến hành truy vấn ảnh.
+	Button “Kết quả”: hiển thị các ảnh liên quan.
+ 
+Hình 5. Cửa sổ màn hình khi chương trình đang chạy.
+ 
+Hình 6. Màn hình cửa sổ kết quả.
+	Một số demo
+	Kết quả mỗi lần chạy sẽ được lưu dưới dạng file *.html
+ 
+Hình 7. Kết quả chạy demo 1.
+
+
+  
+Hình 8. Kết quả chạy demo 2.
+	Clip demo chương trình: https://www.youtube.com/watch?v=n5PCs1V9oGg&feature=share
+	NHẬN XÉT ĐÁNH GIÁ
+	Nhận xét:
+Ưu điểm:
+	Kết quả có độ chính xác cao.
+	Áp dụng được các kiến thức từ Text retrieval sang.
+Nhược điểm:
+	Tốc độ tìm kiếm còn chậm.
+	Đánh giá độ chính xác của hệ thống:
+Giả định:
+	Chọn ngẫu nhiên 15 ảnh query để test độ chính xác của hệ thống.
+	Query cùng kết quả được lưu lần lượt ở các file html (trong thư mục result_test). 
+	Giả định lấy 15 ảnh có trọng số cao nhất trong tổng số ouput trả về. 
+Query 1:
+AP =1/15*(1+1+1+1+1+1+1+1+1+1+1+1+1+1+1)=1
+Query 2:
+AP =1/5*(1+1+3/4+4/7+5/8)=221/280
+Query 3:
+AP =1/11*(1+1+1+1+1+1+1+1+9/11+10/12+11/13)=9007/9438
+Query 4:
+AP =1/2*(1+2/8)=5/8
+Query 5:
+AP =1/5*(1+1+1+1+5/7)=33/35
+Query 6:
+AP =1/14*(1+1+1+1+1+1+1+1+1+1+1+1+12/13+13/14+14/15)=0.98464
+Query 7:
+AP =1/15*(1+1+1+1+1+1+1+1+1+1+1+1+1+1+1)=1
+Query 8:
+AP =1/3*(1+2/4+3/14)=4/7
+Query 9:
+AP =1/15*(1+1+1+1+1+1+1+1+1+1+1+1+1+1+1)=1
+Query 10:
+AP =1/15*(1+1+1+1+1+1+1+1+1+1+1+1+1+1+1)=1
+Query 11:
+AP =1/4*(1+1+1+4/8)=7/8
+Query 12:
+AP =1/4*(1+1+1+4/5)=19/20
+Query 13:
+AP =1/15*(1+1+1+1+1+1+1+1+1+1+1+1+1+1+1)=1
+Query 14:
+AP =1/10*(1+1+1+1+1+1+7/9+8/11+9/12+10/13)=0.90243
+Query 15:
+AP =1/9*(1+1+1+1+1+1+7/12+8/13+9/15)=0.86652
+
+Mean Average Precision:
+MAP=0.897433
+
+	THAM KHẢO
+	https://vi.wikipedia.org/wiki/Truy_h%E1%BB%93i_th%C3%B4ng_tin
+	https://en.wikipedia.org/wiki/Image_retrieval
+	Content-Based Image Retrieval using Local Features Descriptors and Bag-of-Visual Words - Mohammed Alkhawlani, Mohammed Elmogy, Hazem Elbakry 
+	Slide Cornell Tech.
+	Lowe D.G., “Distinctive image features from scale-invariant keypoints, “ Int. journal of compute. Vis., vol. 60, pp. 91–110. 2004.
+	Bay H., Tuytelaars T., and Van Gool L. “Surf: Speeded up robust features“ Compute. Vision–ECCV, Springer, pp. 404–417. 2006.
+	https://en.wikipedia.org/wiki/K-d_tree
+
