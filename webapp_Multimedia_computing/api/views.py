@@ -21,18 +21,27 @@ def home(request):
 def compression(request):
     if request.method == 'POST' and request.FILES['myfile']:
         myfile = request.FILES['myfile']
+        # todo: server need to receive file name with spaces and unicode characters
         fs = FileSystemStorage()
         filename = fs.save(myfile.name, myfile)
         uploaded_file_url = fs.url(filename)
         # file path on server
         module_dir = os.path.dirname(__file__)
         module_dir = os.path.join(module_dir, 'media')
-        new_file_name =  uploaded_file_url.split('/')[3]
-        uploaded_file_path = os.path.join(module_dir,  new_file_name)
-        saving_path = os.path.join(module_dir, 'compress_' + new_file_name)
+        filepath_parts =  uploaded_file_url.split('/')
+        saving_path = '/' + filepath_parts[1] + '/' +filepath_parts[2] + '/compress_' + filepath_parts[3] + '.ahihi'
 
-        huffman_compress_main_process(uploaded_file_path, saving_path)
-        module_dir = os.path.dirname(__file__)
+        # Paths
+        origin_file_path = os.path.join(module_dir, filepath_parts[3])
+
+        compressed_file_path = os.path.join(module_dir,'compress_'+ filepath_parts[3]) + '.ahihi'
+        #
+        # huffman_compress_main_process(uploaded_file_url, saving_path)
+        try:
+            huffman_compress_main_process(origin_file_path, compressed_file_path)
+        except:
+            return render(request, 'exceptions.html', {})
+        # module_dir = os.path.dirname(__file__)
         return render(request, 'simple_view_compression.html', {
             'uploaded_file_url': uploaded_file_url,
             'download_path': saving_path
@@ -42,18 +51,28 @@ def compression(request):
 def decompression(request):
     if request.method == 'POST' and request.FILES['myfile']:
         myfile = request.FILES['myfile']
+
         fs = FileSystemStorage()
         filename = fs.save(myfile.name, myfile)
         uploaded_file_url = fs.url(filename)
         # file path on server
         module_dir = os.path.dirname(__file__)
         module_dir = os.path.join(module_dir, 'media')
-        new_file_name =  uploaded_file_url.split('/')[3]
-        uploaded_file_path = os.path.join(module_dir,  new_file_name)
-        saving_path = os.path.join(module_dir, 'decompress_' + new_file_name)
+        filepath_parts =  uploaded_file_url.split('/')
+        saving_path = '/' + filepath_parts[1] + '/' +filepath_parts[2] + '/decompress_' + filepath_parts[3] + '.txt'
+        # saving_path.replace('%20',' ')
 
-        huffman_decompress_main_process(uploaded_file_path, saving_path)
-        module_dir = os.path.dirname(__file__)
+        # Paths
+        origin_file_path = os.path.join(module_dir, filepath_parts[3])
+        compressed_file_path = os.path.join(module_dir,'decompress_'+ filepath_parts[3]) + '.txt'
+        #
+        # huffman_compress_main_process(uploaded_file_url, saving_path)
+        try:
+            huffman_decompress_main_process(origin_file_path, compressed_file_path)
+
+        except:
+            return render(request, 'exceptions.html', {})
+        # module_dir = os.path.dirname(__file__)
         return render(request, 'simple_view_decompression.html', {
             'uploaded_file_url': uploaded_file_url,
             'download_path': saving_path

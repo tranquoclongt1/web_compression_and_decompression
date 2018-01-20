@@ -1,0 +1,19 @@
+lContent:
+Đèn?
+Đèn group là một nhóm khởi nghiệp với lực lượng nòng cốt đến từ đại học công nghệ thông tin – DHQG TP.HCM. 
+Đèn group được thành lập với mong muốn:
+1.	Phát triển các dịch vụ đời sống, đồng thời đem lại những trải nghiệm người dùng tốt nhất đến với mọi người, đặc biệt với sinh viên.
+2.	Phát triển các giải pháp tự động hóa trong quản lí cho các doanh nghiệp, áp dụng các kiến thức về thị giác máy tính (Computer Vision) và máy học (Machine learning).
+
+Công tác xã hội
+Đèn: với ý nghĩa của sự sáng tạo, đại diện cho trí thức, đồng thời cũng mang ý nghĩa là nguồn soi sáng. Đèn được thành lập với nguyện vọng cải thiện cuộc sống và tri thức mọi người, đặc biệt là trẻ em Việt Nam.
+“Mình chỉ thực sự hạnh phúc khi thấy những người xung quanh mình hạnh phúc. Câu trên của bác Nguyễn Xuân Phú trong Sharktank VN, và mình cũng vậy” – Founder của đèn luôn mong muốn Đèn có đủ khả năng để hỗ trợ cho việc học tập và đời sống của trẻ em ở những vùng sâu vùng xa, hoặc các hộ gia đình có điều kiện khó khăn.
+	
+Thành viên:
+Trần Quốc Long - Founder
+- “Mình chỉ thực sự hạnh phúc khi thấy những người xung quanh mình hạnh phúc”
+-	Tiểu sử:
++ Cựu học sinh chuyên toán – THTP Chuyên Thăng Long – Đà Lạt
++ Á khoa kì thi tuyển sinh đại học tại Đại học Công nghệ thông tin – ĐHQG TPHCM
++ Sinh viên lớp Cử nhân tài năng ngành Khoa học máy tính – Khóa 2014-2018
++ Ban chủ nhiệm CLB Lập trình thuật toán, Khoa KHMT, nhiệm kì 2015-2016

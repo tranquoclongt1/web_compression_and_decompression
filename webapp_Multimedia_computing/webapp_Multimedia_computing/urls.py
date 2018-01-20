@@ -19,7 +19,8 @@ from api import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # url(r'^api/', include('api.urls', namespace='api')),
-    url(r'^$', views.home, name='home'),
+    url(r'^api-03$', views.home, name='home'),
     url(r'^uploads/compress/$', views.compression, name='compression'),
     url(r'^uploads/decompress/$', views.decompression, name='decompression'),
+    url(r'^exceptions$', views.decompression, name='exceptions'),
 ]

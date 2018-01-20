@@ -40,7 +40,7 @@ def huffman_compress_main_process(_input_file_path, _output_file_path):
 
     # Compute compression ratio:
     compression_ratio = os.path.getsize(inputfile)/os.path.getsize(outputfile)
-    print('Compression Ratio = ', compression_ratio)
+    # print('Compression Ratio = ', compression_ratio)
 
 
 # Returns a frequency table based on the bytes in the given file.
@@ -50,9 +50,9 @@ def get_frequencies(filepath):
     i = 1
     with open(filepath, "rb") as input:
         while True:
-            print(str(i), end='', flush=True)
+            # print(str(i), end='', flush=True)
             b = input.read(1)
-            print(str(b), ' -- len: ', len(b))
+            # print(str(b), ' -- len: ', len(b))
             if len(b) == 0:
                 break
             b = b[0] if python3 else ord(b)
