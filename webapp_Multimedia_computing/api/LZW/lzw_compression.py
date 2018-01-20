@@ -4,7 +4,6 @@
 import os, chardet
 import sys, re, math, unicodedata, codecs, pickle
 import numpy as np
-from scipy import misc
 from math import log
 
 
@@ -148,15 +147,7 @@ class LZW:
 		# with image file 
 		# convert pixel matrix to 1 dimension array
 		elif file_extension in ['.jpeg', '.jpg', '.png', '.bmp']:
-			image = misc.imread(filename)
-			# save the resolution information
-			additionInformation['resolution'] = image.shape
-
-			# convert image to 1-dimension array
-			image_array = image.reshape(-1)
-			image_array = [str(x) for x in image_array]
-
-			return image_array, additionInformation
+			pass
 
 	def int_to_bits(self, list_input):
 		"""
