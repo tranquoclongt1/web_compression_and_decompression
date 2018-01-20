@@ -44,27 +44,37 @@ def compression(request):
         origin_file_path = os.path.join(module_dir, filepath_parts[3])
 
         # select algorithm
-        if request.POST['algorithm'] == 'Huffman':
-            #
-            # huffman_compress_main_process(uploaded_file_url, saving_path)
-            #
-            # generate file name
-            compression_ratio = huffman_compress_main_process(origin_file_path, compressed_file_path)
-        elif request.POST['algorithm'] == 'LZW':
-            # generate file name
+        i = 0
+        try:
+            if request.POST['algorithm'] == 'Huffman':
+                #
+                # huffman_compress_main_process(uploaded_file_url, saving_path)
+                #
+                # generate file name
+                i = 1
+                compression_ratio = huffman_compress_main_process(origin_file_path, compressed_file_path)
+            elif request.POST['algorithm'] == 'LZW':
+                i = 2
+                # generate file name
 
-            # run LZW on origin file and save to compressed file path
-            lzw_compress = LZW()
-            compression_ratio = lzw_compress.lzw_compression(origin_file_path, compressed_file_path)
-        elif request.POST['algorithm'] == 'Arithmetic':
-            compression_ratio = arithmetic_compression(origin_file_path, compressed_file_path)
+                # run LZW on origin file and save to compressed file path
+                lzw_compress = LZW()
+                compression_ratio = lzw_compress.lzw_compression(origin_file_path, compressed_file_path)
+            elif request.POST['algorithm'] == 'Arithmetic':
+                i = 3
+                compression_ratio = arithmetic_compression(origin_file_path, compressed_file_path)
 
-        # module_dir = os.path.dirname(__file__)
-        return render(request, 'simple_view_compression.html', {
-            'uploaded_file_url': uploaded_file_url,
-            'download_path': saving_path,
-            'compression_ratio': compression_ratio
-        })
+            # module_dir = os.path.dirname(__file__)
+            return render(request, 'simple_view_compression.html', {
+                'uploaded_file_url': uploaded_file_url,
+                'download_path': saving_path,
+                'compression_ratio': compression_ratio
+            })
+        except:
+            if i== 1:
+                return render(request, 'exceptions.html', {})
+            return render(request, 'exceptions.html', {'internal_unicode_error': 1})
+
     return render(request, 'simple_view_compression.html')
 
 def decompression(request):

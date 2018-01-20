@@ -132,7 +132,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'api/media')
 #     '/var/www/static/',
 # ]
 
-RUN_LOCAL = False
+RUN_LOCAL = True
 if RUN_LOCAL:
     SECURE_SSL_REDIRECT = False
     ALLOWED_HOSTS = []

@@ -50,11 +50,9 @@
               <section>
                 <span class="feature-icon"><span class="icon fa-bolt"></span></span>
                 <header>
-                  <h3>Shanon-Fano</h3>
+                  <h3>Arithmetic</h3>
                 </header>
-                <p> the field of data compression, <b>Shannon–Fano coding</b>, named after Claude Shannon and Robert Fano, is a technique for constructing a prefix code based on a set of symbols and their probabilities (estimated or measured). It is suboptimal in the sense that it does not achieve the lowest possible expected code word length like Huffman coding; however it still guarantees that all code word lengths are within one bit of their theoretical ideal <i>-log(P(x))</i><br>
-
-                The technique was proposed in Shannon's "A Mathematical Theory of Communication", his 1948 article introducing the field of information theory. The method was attributed to Fano, who later published it as a technical report.[1] Shannon–Fano coding should not be confused with Shannon coding, the coding method used to prove Shannon's noiseless coding theorem, or with Shannon–Fano–Elias coding (also known as Elias coding), the precursor to arithmetic coding.</p>
+                <p> Arithmetic coding is a form of entropy encoding used in lossless data compression. Normally, a string of characters such as the words "hello there" is represented using a fixed number of bits per character, as in the ASCII code. When a string is converted to arithmetic encoding, frequently used characters will be stored with fewer bits and not-so-frequently occurring characters will be stored with more bits, resulting in fewer bits used in total. Arithmetic coding differs from other forms of entropy encoding, such as Huffman coding, in that rather than separating the input into component symbols and replacing each with a code, arithmetic coding encodes the entire message into a single number, an arbitrary-precision fraction q where 0.0 ≤ q < 1.0. It represents the current information as a range, defined by two numbers. Recent Asymmetric Numeral Systems family of entropy coders allows for faster implementations thanks to directly operating on a single natural number representing the current information.</p>
               </section>
             </div>
             <div class="4u 12u(narrow)">

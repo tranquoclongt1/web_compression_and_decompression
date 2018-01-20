@@ -8,6 +8,10 @@
           <h2>- Problems with your file -<br><font size="3">This beta do not processing with that kind of file (or file name)</font> </h2>
         </div>
         <a  href="{% url 'home' %}" class="button" >HOME</a><br><br>
+        {% if internal_unicode_error %}
+        	<font size="3"><i><b>LZW</b></i> and <i><b>Arithmetic</b></i> Coding have developed for Unicode charaters yet :)</font>
+		{% endif %}
+
     </header>
 </section>
 {% endblock %}
